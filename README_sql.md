@@ -30,7 +30,7 @@ Výzkumné otázky
 
 # Popis dat
 
-## Primární tabulka Table 1.sql
+## Primární tabulka (Table 1.sql)
 
 Při vytvoření tabulky č.1 se objevily následující úkoly
 
@@ -41,7 +41,7 @@ V tabulce "czechia_price" byly nalezeny položky, které se získaly na přelomu
  
 
 
-## Vedlejší tabulka Table 2.sql
+## Vedlejší tabulka (Table 2.sql)
 
 Vedlejší tabulka je sestavena sjednocením dvou tabulek "economies" a "countries", přičemž tabulka "countries" je tabulka, na kterou se budou vázat údaje z tabulky "economies" protože v tabulce "economies" jsou zahrnuté informace nejen o státech ale také o větších skupinách států. 
 
@@ -50,6 +50,31 @@ Základním omezením pro výběrku dat budou dvě proměnné - kontinent "Europ
 
 # Odpovědi na otázky
 
+## Otázka č. 1 (Answer 1.sql)
+
+SQL dotaz má prozradit seznam odvětví, v nichž meziroční změna průměrné mzdy nabývá záporné nebo nulové hodnoty, a poté vyjmenovat odvětví, ve kterých průměrná mzda roste v průběhu let.
+
+K tomu je použita tvorba dočasné tabulky pomocí operátoru "WITH" a propojovaní stejné tabulky přes operátor "JOIN" aby se daly zobrazit vedle sebe hodnoty průměrných mezd v konkrétním odvětví s časovým odstupem 1 rok. Dále je potřeba z původních dat primární tabulky zjistit možný výskyt nulových hodnot v sloupcích "industry_name" a "payroll_value". 
+
+Výsledkem je seznam 14 odvětví ve kterých se vyskytuji poklesy v průměrných mzdách v průběhu let, a to jsou odvětví
+
+1. Činnosti v oblasti nemovitostí
+2. Informační a komunikační činnosti
+3. Kulturní, zábavní a rekreační činnosti
+4. Ostatní činnosti
+5. Peněžnictví a pojišťovnictví
+6. Profesní, vědecké a technické činnosti
+7. Stavebnictví
+8. Těžba a dobývání
+9. Ubytování, stravování a pohostinství
+10. Velkoobchod a maloobchod; opravy a údržba motorových vozidel
+11. Veřejná správa a obrana; povinné sociální zabezpečení
+12. Výroba a rozvod elektřiny, plynu, tepla a klimatiz. vzduchu
+13. Vzdělávání
+14. Zásobování vodou; činnosti související s odpady a sanacemi
+
+
+V ostatních 5 odvětvích (Administrativní a podpůrné činnosti; Doprava a skladování; Zdravotní a sociální péče; Zemědělství, lesnictví, rybářství a Zpracovatelský průmysl) průměrné mzdy v průběhu let rostou.  
  
 
 
