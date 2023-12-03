@@ -3,8 +3,8 @@
 
 # Struktura projektu
 
-- sql fajly s tabulkami (Table 1.sql, Table 2.sql)
-- sql fajly s odpovědi (Answer 1.sql, Answer 2.sql, Answer 3.sql, Answer 4.sql, Answer 5.sql)
+- sql soubory s tabulkami (Table 1.sql, Table 2.sql)
+- sql soubory s odpovědi (Answer 1.sql, Answer 2.sql, Answer 3.sql, Answer 4.sql, Answer 5.sql)
 - dokumentace (viz níže)
 
 
@@ -86,6 +86,17 @@ Dále je sestaven SQL dotaz určující množství litrů mléka a kilogramů ch
 
 
 ## Otázka č. 3 (Answer 3.sql) - Která kategorie potravin zdražuje nejpomaleji (je u ní nejnižší percentuální meziroční nárůst)?
+
+Daná úloha je rozdělená na několik dílčích úloh.
+ 
+Nejdřív se má připravit dočasná tabulka meziroční změny v cenách jednotlivých položek potravin, poté se má spočítat procentuální rozdíl mezi průměrnými cenami potravin, a nakonec se má zjistit nejnižší procentuální meziroční nárůst. 
+Dotaz je formulován tak že se hledá nejnižší procentuální meziroční nárůst (nikoliv nejnižší procentuální meziroční změna), tak se bude brát v úvahu nejnižší hodnota meziroční změny vetší než 0 %.
+
+Výsledkem SQL dotazu je hodnota 0.01 % u kategorie potravin "Rostlinný roztíratelný tuk".
+
+
+## Otázka č. 4 (Answer 4.sql) - Existuje rok, ve kterém byl meziroční nárůst cen potravin výrazně vyšší než růst mezd (větší než 10 %)?
+
 
 
   
