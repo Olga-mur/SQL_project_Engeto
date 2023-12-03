@@ -98,7 +98,7 @@ Daná úloha je rozdělená na několik dílčích úloh.
 Nejdřív se má připravit dočasná tabulka meziroční změny v cenách jednotlivých položek potravin, poté se má spočítat procentuální rozdíl mezi průměrnými cenami potravin, a nakonec se má zjistit nejnižší procentuální meziroční nárůst. 
 Dotaz je formulován tak že se hledá nejnižší procentuální meziroční nárůst (nikoliv nejnižší procentuální meziroční změna), tak se bude brát v úvahu nejnižší hodnota meziroční změny vetší než 0 %.
 
-Výsledkem SQL dotazu je hodnota 0.01 % u kategorie potravin "Rostlinný roztíratelný tuk".
+Výsledkem SQL dotazu je hodnota 0,01 % u kategorie potravin "Rostlinný roztíratelný tuk".
 
 
 
@@ -111,6 +111,9 @@ Prvním krokem k zodpovězení otázky je příprava dočasné tabulky, která b
 
 
 ## Otázka č. 5 (Answer 5.sql) - Má výška HDP vliv na změny ve mzdách a cenách potravin? Neboli, pokud HDP vzroste výrazněji v jednom roce, projeví se to na cenách potravin či mzdách ve stejném nebo následujícím roce výraznějším růstem?
+
+Daný úkol se má plnit za využití primární a vedlejší tabulek, přičemž z vedlejší tabulky pro nás relevantními budou data určené výhradně pro Českou republiku. 
+Je proveden výpočet meziroční procentuální změny u HDP, průměrných cen a průměrných mezd. Výsledkem jsou hodnoty v posledních 3 sloupcích dočasné tabulky. Bohužel nelze říci že mezi změnou HDP, průměrnými mzdami a průměrnými cenami existuje přímá závislost.  
 
 
   
