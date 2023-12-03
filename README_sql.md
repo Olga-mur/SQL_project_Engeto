@@ -85,5 +85,7 @@ Zaprvé se má zjistit jaké jsou první a poslední srovnatelné období, za kt
 Dále je sestaven SQL dotaz určující množství litrů mléka a kilogramů chleba, které se dají koupit za průměrné ceny potravin a mezd v 1Q.2006 a 4Q.2018. Podle zobrazených čísel je zjevné že s postupem času roste množství mléka a chleba, takže lze řičí že průměrné mzdy v ČR rostly rychleji než se zvyšovaly průměrné ceny potravin, což pro obyvatele ČR je pozitivním zjištěním.  
 
 
+## Otázka č. 3 (Answer 3.sql) - Která kategorie potravin zdražuje nejpomaleji (je u ní nejnižší percentuální meziroční nárůst)?
+
 
   
