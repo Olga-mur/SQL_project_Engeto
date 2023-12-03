@@ -51,6 +51,8 @@ Základním omezením pro výběrku dat budou dvě proměnné - kontinent "Europ
 
 # Odpovědi na otázky
 
+
+
 ## Otázka č. 1 (Answer 1.sql) - Rostou v průběhu let mzdy ve všech odvětvích, nebo v některých klesají?
 
 SQL dotaz má prozradit seznam odvětví, v nichž meziroční změna průměrné mzdy nabývá záporné nebo nulové hodnoty, a poté vyjmenovat odvětví, ve kterých průměrná mzda roste v průběhu let.
@@ -78,11 +80,15 @@ Výsledkem je seznam 14 odvětví ve kterých se vyskytuji poklesy v průměrný
 V ostatních 5 odvětvích (Administrativní a podpůrné činnosti; Doprava a skladování; Zdravotní a sociální péče; Zemědělství, lesnictví, rybářství a Zpracovatelský průmysl) průměrné mzdy v průběhu let rostou.  
 
 
+
+
 ## Otázka č. 2 (Answer 2.sql) - Kolik je možné si koupit litrů mléka a kilogramů chleba za první a poslední srovnatelné období v dostupných datech cen a mezd?
 
 Zaprvé se má zjistit jaké jsou první a poslední srovnatelné období, za které se budou porovnávat data u položek "Chléb konzumní kmínový" a "Mléko polotučné pasterované". Počátečním obdobím bude 1.kvartal 2006, konečným srovnatelným obdobím bude 4.kvartal roku 2018.
 
 Dále je sestaven SQL dotaz určující množství litrů mléka a kilogramů chleba, které se dají koupit za průměrné ceny potravin a mezd v 1Q.2006 a 4Q.2018. Podle zobrazených čísel je zjevné že s postupem času roste množství mléka a chleba, takže lze řičí že průměrné mzdy v ČR rostly rychleji než se zvyšovaly průměrné ceny potravin, což pro obyvatele ČR je pozitivním zjištěním.  
+
+
 
 
 ## Otázka č. 3 (Answer 3.sql) - Která kategorie potravin zdražuje nejpomaleji (je u ní nejnižší percentuální meziroční nárůst)?
@@ -95,9 +101,16 @@ Dotaz je formulován tak že se hledá nejnižší procentuální meziroční n�
 Výsledkem SQL dotazu je hodnota 0.01 % u kategorie potravin "Rostlinný roztíratelný tuk".
 
 
+
+
 ## Otázka č. 4 (Answer 4.sql) - Existuje rok, ve kterém byl meziroční nárůst cen potravin výrazně vyšší než růst mezd (větší než 10 %)?
 
 Prvním krokem k zodpovězení otázky je příprava dočasné tabulky, která by uváděla meziroční změny v cenách potravin a mezd v procentech. Dále by se spočetly rozdíly mezi změnami v nárůstu cen a mezd (za stejné porovnatelné období). Podle znění otázky se mají porovnávat pouze kladné meziroční změny, tudíž se má zadat příslušné omezení. Největší rozdíl nabývá hodnoty 3,82 % mezi lety 2011 a 2012. Tudíž neexistuje rok, v nimž meziroční narůst cen potravin byl vyšší než růst mezd o 10 % bod.    
+
+
+
+
+## Otázka č. 5 (Answer 5.sql) - Má výška HDP vliv na změny ve mzdách a cenách potravin? Neboli, pokud HDP vzroste výrazněji v jednom roce, projeví se to na cenách potravin či mzdách ve stejném nebo následujícím roce výraznějším růstem?
 
 
   
