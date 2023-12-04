@@ -35,8 +35,8 @@ Výzkumné otázky
 
 Při vytvoření tabulky č.1 se objevily následující úkoly
 
-- sjednotit dvě tabulky "czechia_price" a "czechia_payroll" podle totožných porovnatelných období, přičemž v tabulce "czechia_price" jsou data ražena dle týdnů, v tabulce "czechia_payroll" rozdělení dat je provedeno dle kvartálů. Časovou základnou při seskupení dat byl vybrán kvartál. 
-V tabulce "czechia_price" byly nalezeny položky, které se získaly na přelomu dvou kvartálů. Zde budeme předpokládat že v takových případech kvartál, pod který spadají příslušná data je kvartál hodnot "date_to".
+- sjednotit dvě tabulky "czechia_price" a "czechia_payroll" podle totožných porovnatelných období, přičemž v tabulce "czechia_price" jsou data ražena dle týdnů, v tabulce "czechia_payroll" rozdělení dat je provedeno dle kvartálů. Časovou základnou při seskupení dat byl vybrán právě kvartál. 
+V tabulce "czechia_price" byly nalezeny položky, které se získaly na přelomu dvou kvartálů. Zde budeme předpokládat že v takových případech kvartál, pod který spadají příslušná data, je kvartál hodnot "date_to".
  
 - očistit tabulku o nepotřebná data, například mít k dispozici data o průměrné hrubé mzdě (tj. očistit o pozici "Příměrný počet zaměstnaných osob"), hodnoty mají být v korunách (nikoliv v tis. osob) a stejně tak i ve fyzických jednotkách (místo jednotky "přepočtený").
  
@@ -44,7 +44,7 @@ V tabulce "czechia_price" byly nalezeny položky, které se získaly na přelomu
 
 ## Vedlejší tabulka (Table 2.sql)
 
-Vedlejší tabulka je sestavena sjednocením dvou tabulek "economies" a "countries", přičemž tabulka "countries" je tabulka, na kterou se budou vázat údaje z tabulky "economies" protože v tabulce "economies" jsou zahrnuté informace nejen o státech ale také o větších skupinách států. 
+Vedlejší tabulka je sestavena sjednocením dvou tabulek "economies" a "countries", přičemž tabulka "countries" je tabulka, na kterou se budou vázat údaje z tabulky "economies" (z důvodu toho že v tabulce "economies" jsou zahrnuté informace nejen o státech ale také o větších skupinách států). 
 
 Základním omezením pro výběrku dat budou dvě proměnné - kontinent "Europe" a období od 2006 do 2018 včetně (podle výše vymezeného požadavku stejného období jako primární tabulka pro ČR).
 
@@ -86,7 +86,7 @@ V ostatních 5 odvětvích (Administrativní a podpůrné činnosti; Doprava a s
 
 Zaprvé se má zjistit jaké jsou první a poslední srovnatelné období, za které se budou porovnávat data u položek "Chléb konzumní kmínový" a "Mléko polotučné pasterované". Počátečním obdobím bude 1.kvartal 2006, konečným srovnatelným obdobím bude 4.kvartal roku 2018.
 
-Dále je sestaven SQL dotaz určující množství litrů mléka a kilogramů chleba, které se dají koupit za průměrné ceny potravin a mezd v 1Q.2006 a 4Q.2018. Podle zobrazených čísel je zjevné že s postupem času roste množství mléka a chleba, takže lze řičí že průměrné mzdy v ČR rostly rychleji než se zvyšovaly průměrné ceny potravin, což pro obyvatele ČR je pozitivním zjištěním.  
+SQL dotaz je sestaven tak aby určil množství litrů mléka a kilogramů chleba, které se dají koupit za průměrné ceny potravin a mezd v 1Q.2006 a 4Q.2018. Podle zobrazených čísel je zjevné, že s postupem času roste množství mléka a chleba, takže lze řičí že průměrné mzdy v ČR rostly rychleji než se zvyšovaly průměrné ceny potravin, což pro obyvatele ČR je pozitivním zjištěním.  
 
 
 
@@ -96,7 +96,7 @@ Dále je sestaven SQL dotaz určující množství litrů mléka a kilogramů ch
 Daná úloha je rozdělená na několik dílčích úloh.
  
 Nejdřív se má připravit dočasná tabulka meziroční změny v cenách jednotlivých položek potravin, poté se má spočítat procentuální rozdíl mezi průměrnými cenami potravin, a nakonec se má zjistit nejnižší procentuální meziroční nárůst. 
-Dotaz je formulován tak že se hledá nejnižší procentuální meziroční nárůst (nikoliv nejnižší procentuální meziroční změna), tak se bude brát v úvahu nejnižší hodnota meziroční změny vetší než 0 %.
+Dotaz je formulován tak, že se hledá nejnižší procentuální meziroční nárůst (nikoliv nejnižší procentuální meziroční změna), tak se bude brát v úvahu nejnižší hodnota meziroční změny vetší než 0 %.
 
 Výsledkem SQL dotazu je hodnota 0,01 % u kategorie potravin "Rostlinný roztíratelný tuk".
 
@@ -105,7 +105,7 @@ Výsledkem SQL dotazu je hodnota 0,01 % u kategorie potravin "Rostlinný roztír
 
 ## Otázka č. 4 (Answer 4.sql) - Existuje rok, ve kterém byl meziroční nárůst cen potravin výrazně vyšší než růst mezd (větší než 10 %)?
 
-Prvním krokem k zodpovězení otázky je příprava dočasné tabulky, která by uváděla meziroční změny v cenách potravin a mezd v procentech. Dále by se spočetly rozdíly mezi změnami v nárůstu cen a mezd (za stejné porovnatelné období). Podle znění otázky se mají porovnávat pouze kladné meziroční změny, tudíž se má zadat příslušné omezení. Největší rozdíl nabývá hodnoty 3,82 % mezi lety 2011 a 2012. Tudíž neexistuje rok, v nimž meziroční narůst cen potravin byl vyšší než růst mezd o 10 % bod.    
+Prvním krokem k zodpovězení otázky je příprava dočasné tabulky, která by uváděla meziroční změny v cenách potravin a mezd v procentech. Dále by se spočetly rozdíly mezi změnami v nárůstu cen a mezd (za stejné porovnatelné období). Podle znění otázky se mají porovnávat pouze kladné meziroční změny, tudíž se má zadat příslušné omezení. Největší rozdíl mezi nárůstem cen potravin a nárůstem mezd nabývá hodnoty 3,82 % mezi lety 2011 a 2012. Tudíž neexistuje rok, v nimž meziroční narůst cen potravin byl vyšší než růst mezd o 10 % bod.    
 
 
 
@@ -113,7 +113,7 @@ Prvním krokem k zodpovězení otázky je příprava dočasné tabulky, která b
 ## Otázka č. 5 (Answer 5.sql) - Má výška HDP vliv na změny ve mzdách a cenách potravin? Neboli, pokud HDP vzroste výrazněji v jednom roce, projeví se to na cenách potravin či mzdách ve stejném nebo následujícím roce výraznějším růstem?
 
 Daný úkol se má plnit za využití primární a vedlejší tabulek, přičemž z vedlejší tabulky pro nás relevantními budou data určené výhradně pro Českou republiku. 
-Je proveden výpočet meziroční procentuální změny u HDP, průměrných cen a průměrných mezd. Výsledkem jsou hodnoty v posledních 3 sloupcích dočasné tabulky. Bohužel nelze říci že mezi změnou HDP, průměrnými mzdami a průměrnými cenami existuje přímá závislost.  
+Je proveden výpočet meziroční procentuální změny u HDP, průměrných cen a průměrných mezd. Výsledkem jsou hodnoty v posledních 3 sloupcích dočasné tabulky. Bohužel nelze říci, že mezi změnou HDP, průměrnými mzdami a průměrnými cenami existuje přímá závislost.  
 
 
   
