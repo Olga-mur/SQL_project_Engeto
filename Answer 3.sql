@@ -1,24 +1,16 @@
-WITH food AS(
-	SELECT
-		food_name,
-		`year`, 
-		ROUND(avg(food_price),2) AS average_food_price
-	FROM t_olga_murzinskaja_project_sql_primary_final tompspf
-	WHERE food_name IS NOT NULL 
-	GROUP BY food_name, `year`   
-	HAVING avg(food_price)
-)
 SELECT 
-	f.food_name,
-	f.`year`, 
-	f2.`year` AS year2, 
-	f.average_food_price, 
-	f2.average_food_price AS average_food_price2,
-	round((f2.average_food_price - f.average_food_price) / f.average_food_price * 100, 2) AS food_growth
-FROM food f
-JOIN food f2
-	ON f.`year` = f2.`year` - 1
-	AND f.food_name = f2.food_name
-WHERE round((f2.average_food_price - f.average_food_price) / f.average_food_price * 100, 2) > 0
-ORDER BY round((f2.average_food_price - f.average_food_price) / f.average_food_price * 100, 2) ASC
+	t.food_name,	
+	t.date_year,
+	t2.date_year AS date_year2,
+	t.average_price_value,
+	t2.average_price_value,
+	ROUND((t2.average_price_value - t.average_price_value)/t.average_price_value*100, 1) AS food_growth
+FROM t_olga_murzinskaja_project_SQL_primary_final t 
+JOIN t_olga_murzinskaja_project_SQL_primary_final t2
+	ON t.date_year = t2.date_year - 1
+	AND t.food_name = t2.food_name
+GROUP BY date_year, food_name 
+ORDER BY ROUND((t2.average_price_value - t.average_price_value)/t.average_price_value*100, 1) 
 LIMIT 1;
+
+

@@ -92,12 +92,9 @@ SQL dotaz je sestaven tak aby určil množství litrů mléka a kilogramů chleb
 
 ## Otázka č. 3 (Answer 3.sql) - Která kategorie potravin zdražuje nejpomaleji (je u ní nejnižší percentuální meziroční nárůst)?
 
-Daná úloha je rozdělená na několik dílčích úloh.
- 
-Nejdřív se má připravit dočasná tabulka meziroční změny v cenách jednotlivých položek potravin, poté se má spočítat procentuální rozdíl mezi průměrnými cenami potravin, a nakonec se má zjistit nejnižší procentuální meziroční nárůst. 
-Dotaz je formulován tak, že se hledá nejnižší procentuální meziroční nárůst (nikoliv nejnižší procentuální meziroční změna), tak se bude brát v úvahu nejnižší hodnota meziroční změny vetší než 0 %.
+V dané úloze se bude zjišťovat meziroční změny v cenách jednotlivých položek potravin, procentuální rozdíl mezi průměrnými cenami potravin a následně nejnižší procentuální meziroční nárůst s tím, že se dá předpokládat i záporný nárůst.
 
-Výsledkem SQL dotazu je hodnota 0,01 % u kategorie potravin "Rostlinný roztíratelný tuk".
+Výsledkem SQL dotazu je hodnota -30,3 % u kategorie potravin "Rajská jablka červená kulatá". Mezi lety 2006 a 2007 jablka zlevnily skoro o 30 %.
 
 
 
