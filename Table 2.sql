@@ -3,7 +3,7 @@ CREATE TABLE t_olga_murzinskaja_project_SQL_secondary_final AS
 		c.country,
 		c.abbreviation,
 		c.region_in_world,
-		e.`year`,
+		e.`year` AS date_year,
 		e.GDP,
 		e.gini,
 		c.population AS polulation_economies, 
