@@ -1,25 +1,16 @@
-WITH compare AS(
-	SELECT 
-		`year`, 
-		ROUND(avg(food_price),2) AS average_food_price, 
-		ROUND(avg(payroll_value),2) AS average_payroll_value
-	FROM t_olga_murzinskaja_project_sql_primary_final tompspf
-	GROUP BY `year`
-	HAVING avg(food_price) AND avg(payroll_value)
-)
 SELECT 
-	c.`year`,
-	c2.`year` AS year2,
-	c.average_food_price,
-	c2.average_food_price AS average_food_price2,
-	round((c2.average_food_price - c.average_food_price) / c.average_food_price * 100, 2) AS food_growth,
-	c.average_payroll_value,
-	c2.average_payroll_value AS average_payroll_value2,
-	round((c2.average_payroll_value - c.average_payroll_value) / c.average_payroll_value * 100, 2) AS payroll_growth,
-	round((c2.average_food_price - c.average_food_price) / c.average_food_price * 100, 2) - round((c2.average_payroll_value - c.average_payroll_value) / c.average_payroll_value * 100, 2) AS difference
-FROM compare c
-JOIN compare c2
-	ON c.`year` = c2.`year` - 1
-WHERE round((c2.average_food_price - c.average_food_price) / c.average_food_price * 100, 2) >= 0 
-	AND round((c2.average_payroll_value - c.average_payroll_value) / c.average_payroll_value * 100, 2) >= 0 
-ORDER BY difference DESC;
+	t.date_year,
+	t2.date_year AS date_year2,
+	t.average_price_value,
+	t2.average_price_value AS average_price_value2,
+	ROUND((t2.average_price_value - t.average_price_value)/t.average_price_value * 100, 1) AS food_growth,
+	t.average_payroll_value,
+	t2.average_payroll_value AS average_payroll_value2,
+	ROUND((t2.average_payroll_value - t.average_payroll_value)/t.average_payroll_value * 100, 1) AS payroll_growth,
+	ROUND((t2.average_price_value - t.average_price_value)/t.average_price_value * 100, 1) - ROUND((t2.average_payroll_value - t.average_payroll_value)/t.average_payroll_value * 100, 1) AS difference
+FROM t_olga_murzinskaja_project_SQL_primary_final t 
+JOIN t_olga_murzinskaja_project_SQL_primary_final t2
+	ON t.date_year = t2.date_year - 1
+GROUP BY date_year
+ORDER BY ROUND((t2.average_price_value - t.average_price_value)/t.average_price_value * 100, 1) - ROUND((t2.average_payroll_value - t.average_payroll_value)/t.average_payroll_value * 100, 1) DESC 
+LIMIT 1; 
