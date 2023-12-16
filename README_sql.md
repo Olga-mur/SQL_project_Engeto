@@ -84,14 +84,14 @@ Výsledkem je seznam 14 odvětví, ve kterých se vyskytují poklesy v průměrn
 
 Zaprvé se má zjistit jaké jsou první a poslední srovnatelné období, za které se budou porovnávat data u položek "Chléb konzumní kmínový" a "Mléko polotučné pasterované". Počátečním obdobím bude rok 2006, konečným srovnatelným obdobím bude rok 2018.
 
-SQL dotaz je sestaven tak aby určil množství litrů mléka a kilogramů chleba, které se dají koupit za průměrné ceny potravin a mezd v letech 2006 a 2018. Podle zobrazených čísel je zjevné, že s postupem času roste množství mléka a chleba, takže z toho lze odvodit, že průměrné mzdy v ČR rostly rychleji než se zvyšovaly průměrné ceny potravin, což pro obyvatele ČR je pozitivním zjištěním.  
+SQL dotaz je sestaven tak, aby stanovil množství litrů mléka a kilogramů chleba, které se dají koupit za průměrné ceny potravin a mezd v letech 2006 a 2018. Podle zobrazených čísel je zjevné, že s postupem času roste množství mléka a chleba, takže z toho lze odvodit, že průměrné mzdy v ČR rostly rychleji než se zvyšovaly průměrné ceny potravin, což pro obyvatele ČR je pozitivním jevem.  
 
 
 
 
 ## Otázka č. 3 (Answer 3.sql) - Která kategorie potravin zdražuje nejpomaleji (je u ní nejnižší percentuální meziroční nárůst)?
 
-V dané úloze se bude zjišťovat meziroční změny v cenách jednotlivých položek potravin, procentuální rozdíl mezi průměrnými cenami potravin a následně nejnižší procentuální meziroční nárůst s tím, že se dá předpokládat i záporný nárůst.
+V dané úloze se bude určovat meziroční změna v cenách jednotlivých položek potravin, procentuální rozdíl mezi průměrnými cenami potravin a následně nejnižší procentuální meziroční nárůst s tím, že se dá předpokládat i záporný nárůst.
 
 Výsledkem SQL dotazu je hodnota -30,3 % u kategorie potravin "Rajská jablka červená kulatá". Mezi lety 2006 a 2007 jablka zlevnily skoro o 30 %.
 
@@ -108,6 +108,6 @@ Prvním krokem k zodpovězení otázky je výpočet meziroční změny v průmě
 ## Otázka č. 5 (Answer 5.sql) - Má výška HDP vliv na změny ve mzdách a cenách potravin? Neboli, pokud HDP vzroste výrazněji v jednom roce, projeví se to na cenách potravin či mzdách ve stejném nebo následujícím roce výraznějším růstem?
 
 Daný úkol se má plnit za využití primární a vedlejší tabulek, přičemž z vedlejší tabulky pro nás relevantními budou data určené výhradně pro Českou republiku. 
-Je proveden výpočet meziroční procentuální změny u HDP, průměrných cen a průměrných mezd. Výsledkem jsou hodnoty v posledních 3 sloupcích dočasné tabulky. Bohužel z výsledků nelze jednoznačně dospět k závěru, že mezi změnou HDP, průměrnými mzdami a průměrnými cenami existuje přímá závislost. Korelace mezi průměrnými mzdami a cenami vůči HDP by se mohla odrážet ve společné variabilitě (tj. růstu nebo poklesu) veličin ve stejném nebo následujícím roce (čili následujících 2-3 letech). Získané hodnoty nepotvrzují vzájemnou korelaci.  
+Je proveden výpočet meziroční procentuální změny u HDP, průměrných cen a průměrných mezd. Výsledkem jsou hodnoty v posledních 3 sloupcích dočasné tabulky. Bohužel z výsledků nelze jednoznačně dospět k závěru, že mezi změnou HDP, průměrnými mzdami a průměrnými cenami existuje přímá závislost. Korelace mezi průměrnými mzdami a cenami vůči HDP by se mohla odrážet ve společné variabilitě (tj. růstu nebo poklesu) veličin ve stejném nebo následujícím roce (čili následujících 2-3 letech) což získané hodnoty nedokládají.  
 
   
