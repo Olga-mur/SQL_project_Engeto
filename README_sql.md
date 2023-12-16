@@ -109,7 +109,6 @@ Prvním krokem k zodpovězení otázky je výpočet meziroční změny v průmě
 ## Otázka č. 5 (Answer 5.sql) - Má výška HDP vliv na změny ve mzdách a cenách potravin? Neboli, pokud HDP vzroste výrazněji v jednom roce, projeví se to na cenách potravin či mzdách ve stejném nebo následujícím roce výraznějším růstem?
 
 Daný úkol se má plnit za využití primární a vedlejší tabulek, přičemž z vedlejší tabulky pro nás relevantními budou data určené výhradně pro Českou republiku. 
-Je proveden výpočet meziroční procentuální změny u HDP, průměrných cen a průměrných mezd. Výsledkem jsou hodnoty v posledních 3 sloupcích dočasné tabulky. Bohužel nelze říci, že mezi změnou HDP, průměrnými mzdami a průměrnými cenami existuje přímá závislost.  
-
+Je proveden výpočet meziroční procentuální změny u HDP, průměrných cen a průměrných mezd. Výsledkem jsou hodnoty v posledních 3 sloupcích dočasné tabulky. Bohužel z výsledků nelze jednoznačně dospět k závěru, že mezi změnou HDP, průměrnými mzdami a průměrnými cenami existuje přímá závislost. Korelace mezi průměrnými mzdami a cenami vůči HDP by se mohla odrážet ve společné variabilitě (tj. růstu nebo poklesu) veličin ve stejném nebo následujícím roce (čili následujících 2-3 letech). Získané hodnoty nepotvrzují vzájemnou korelaci.  
 
   

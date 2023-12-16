@@ -1,36 +1,38 @@
-WITH czech AS(
+WITH secondt AS (
 	SELECT 
-		`year` ,
+		date_year,
 		GDP,
 		population_countries 
-	FROM t_olga_murzinskaja_project_sql_secondary_final tompssf 
+	FROM t_olga_murzinskaja_project_sql_secondary_final ts 
 	WHERE country LIKE 'Czech Republic'
 ),
-compare AS(
+firstt AS(
 	SELECT 
-		`year`,
-		ROUND(avg(food_price),2) AS average_food_price, 
-		ROUND(avg(payroll_value),2) AS average_payroll_value
-	FROM t_olga_murzinskaja_project_sql_primary_final tompspf 	
-	GROUP BY `year`
-	HAVING avg(food_price) AND avg(payroll_value)
+		date_year,
+		ROUND(avg(average_price_value),1) AS avg_food_price, 
+		ROUND(avg(average_payroll_value),1) AS avg_payroll_value
+	FROM t_olga_murzinskaja_project_SQL_primary_final tp  	
+	GROUP BY date_year
+	HAVING avg(average_price_value) AND avg(average_payroll_value)
 )
 SELECT 
-	cz.`year`,
-	cz2.`year` AS year2,
-	cz.GDP,
-	cz2.GDP AS GDP2,
-	c.average_food_price,
-	c2.average_food_price AS average_food_price2,
-	c.average_payroll_value,
-	c2.average_payroll_value AS average_payroll_value2,
-	round((cz2.GDP - cz.GDP) / cz.GDP * 100, 2) AS GDP_growth,
-	round((c2.average_food_price - c.average_food_price) / c.average_food_price * 100, 2) AS food_growth,
-	round((c2.average_payroll_value - c.average_payroll_value) / c.average_payroll_value * 100, 2) AS payroll_growth
-FROM czech cz
-JOIN compare c	
-	ON cz.`year` = c.`year`
-JOIN czech cz2
-	ON cz.`year` = cz2.`year` - 1
-JOIN compare c2
-	ON c.`year` = c2.`year` - 1;
+	s.date_year,
+	s2.date_year AS date_year2,
+	s.GDP,
+	s2.GDP AS GDP2,
+	f.avg_food_price,
+	f2.avg_food_price AS avg_food_price2,
+	f.avg_payroll_value,
+	f2.avg_payroll_value AS avg_payroll_value2,
+	ROUND((s2.GDP - s.GDP) / s.GDP * 100, 1) AS GDP_growth,
+	ROUND((f2.avg_food_price - f.avg_food_price) / f.avg_food_price * 100, 1) AS food_growth,
+	ROUND((f2.avg_payroll_value - f.avg_payroll_value) / f.avg_payroll_value * 100, 1) AS payroll_growth
+FROM secondt s
+JOIN firstt f	
+	ON s.date_year = f.date_year
+JOIN secondt s2
+	ON s.date_year = s2.date_year - 1
+JOIN firstt f2
+	ON f.date_year = f2.date_year - 1;
+
+
