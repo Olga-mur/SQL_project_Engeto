@@ -38,7 +38,9 @@ Při vytvoření tabulky č.1 se objevily následující úkoly
 - sjednotit dvě tabulky "czechia_price" a "czechia_payroll" podle totožných porovnatelných období, přičemž v tabulce "czechia_price" jsou data ražena dle týdnů, v tabulce "czechia_payroll" rozdělení dat je provedeno dle kvartálů. Časovou základnou při seskupení dat byl vybrán právě kvartál. 
 V tabulce "czechia_price" byly nalezeny položky, které se získaly na přelomu dvou kvartálů. Zde budeme předpokládat že v takových případech kvartál, pod který spadají příslušná data, je kvartál hodnot "date_to".
  
-- očistit tabulku o nepotřebná data, například mít k dispozici data o průměrné hrubé mzdě (tj. očistit o pozici "Příměrný počet zaměstnaných osob"), hodnoty mají být v korunách (nikoliv v tis. osob) a stejně tak i ve fyzických jednotkách (místo jednotky "přepočtený").
+- očistit tabulku o nepotřebná data, například mít k dispozici data o průměrné hrubé mzdě (tj. očistit o pozici "Příměrný počet zaměstnaných osob"), hodnoty mají být v korunách (nikoliv v tis. osob) a stejně tak i ve fyzických jednotkách (místo jednotky "přepočtený"). Dále je důležité výjmout z výpočtu průměrných mezd a cen potravin nulové hodnoty, navíc odebrát prázdné řádky ve sloupci "industry_name".
+ 
+- spočítat průměrné mzdy a průměrné ceny potravin seskupené dle roku, odvětví a názvu druhu potravin.
  
 
 
