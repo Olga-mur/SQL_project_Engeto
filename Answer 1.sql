@@ -1,30 +1,18 @@
-SELECT DISTINCT industry_name
-FROM t_olga_murzinskaja_project_sql_primary_final tompspf
-WHERE industry_name IS NOT NULL
-ORDER BY industry_name;
-
-
-WITH odvetvi AS(
-	SELECT
-		industry_name,
-		`year`, 
-		ROUND(avg(payroll_value),0) AS average_payroll_value
-	FROM t_olga_murzinskaja_project_sql_primary_final tompspf
-	WHERE industry_name IS NOT NULL AND payroll_value IS NOT NULL 
-	GROUP BY industry_name, `year`   
-	HAVING avg(payroll_value)
+WITH answer1 AS (
+		SELECT 
+			t.industry_name,
+			t.date_year,
+			t2.date_year AS date_year2,
+			t.average_payroll_value, 
+			t2.average_payroll_value AS average_payroll_value2,
+			ROUND((t2.average_payroll_value - t.average_payroll_value)/t.average_payroll_value * 100, 1) AS payroll_growth
+		FROM t_olga_murzinskaja_project_SQL_primary_final t  
+		JOIN t_olga_murzinskaja_project_SQL_primary_final t2
+			ON t.date_year = t2.date_year - 1
+			AND t.industry_name = t2.industry_name
+		WHERE ROUND((t2.average_payroll_value - t.average_payroll_value)/t.average_payroll_value * 100, 1) <= 0	
+		GROUP BY t.industry_name, t.date_year
 )
-SELECT 
-	odv.industry_name,
-	odv.`year`, 
-	odv2.`year` AS year2, 
-	odv.average_payroll_value, 
-	odv2.average_payroll_value AS average_payroll_value2,
-	round((odv2.average_payroll_value - odv.average_payroll_value) / odv.average_payroll_value * 100, 2) AS payroll_growth 
-FROM odvetvi odv
-JOIN odvetvi odv2
-	ON odv.`year` = odv2.`year` - 1
-	AND odv.industry_name = odv2.industry_name
-WHERE round((odv2.average_payroll_value - odv.average_payroll_value) / odv.average_payroll_value * 100, 2) <= 0
-GROUP BY odv.industry_name
-ORDER BY odv.industry_name ASC, odv.`year` ASC;
+SELECT DISTINCT industry_name
+FROM answer1;
+
