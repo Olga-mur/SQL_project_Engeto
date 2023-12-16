@@ -1,20 +1,14 @@
-SELECT `year` , quarter, food_name  
-FROM t_olga_murzinskaja_project_sql_primary_final tompspf
-WHERE food_name LIKE "Mléko polotučné pasterované" OR food_name LIKE "Chléb konzumní kmínový"
-GROUP BY `year`, quarter, food_name 
-ORDER BY `year` ASC, quarter ASC;
-
-
 SELECT 
-	`year`, 
-	quarter, 
-	round(avg(food_price),2) AS avg_food_price, 
+	date_year, 
+	average_payroll_value,
+	ROUND(avg(average_payroll_value),1) AS avg_payroll_value, 
 	food_name,  
-	round(avg(payroll_value),2) AS avg_payroll_value, 
-	unit_name, 
-	ROUND(avg(payroll_value)/avg(food_price),0) AS quantity
-FROM t_olga_murzinskaja_project_sql_primary_final tompspf
-WHERE (food_name LIKE "Mléko polotučné pasterované" OR food_name LIKE "Chléb konzumní kmínový") 
-AND ((`year` = "2006" AND quarter = "1") OR (`year` = "2018" AND quarter = "4"))
-GROUP BY `year`, quarter, food_name  
-ORDER BY `year`, quarter;
+	average_price_value, 
+	ROUND(avg(average_price_value),1) AS avg_price_value,
+	ROUND(avg(average_payroll_value)/avg(average_price_value),1) AS quantity	
+FROM t_olga_murzinskaja_project_SQL_primary_final t 
+WHERE food_category IN ("114201", "111301") 
+AND date_year IN ("2006", "2018")
+GROUP BY date_year, food_name  
+HAVING avg(average_payroll_value) AND avg(average_price_value)
+ORDER BY date_year;

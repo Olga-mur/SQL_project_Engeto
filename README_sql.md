@@ -83,9 +83,9 @@ Výsledkem je seznam 14 odvětví, ve kterých se vyskytují poklesy v průměrn
 
 ## Otázka č. 2 (Answer 2.sql) - Kolik je možné si koupit litrů mléka a kilogramů chleba za první a poslední srovnatelné období v dostupných datech cen a mezd?
 
-Zaprvé se má zjistit jaké jsou první a poslední srovnatelné období, za které se budou porovnávat data u položek "Chléb konzumní kmínový" a "Mléko polotučné pasterované". Počátečním obdobím bude 1.kvartal 2006, konečným srovnatelným obdobím bude 4.kvartal roku 2018.
+Zaprvé se má zjistit jaké jsou první a poslední srovnatelné období, za které se budou porovnávat data u položek "Chléb konzumní kmínový" a "Mléko polotučné pasterované". Počátečním obdobím bude rok 2006, konečným srovnatelným obdobím bude rok 2018.
 
-SQL dotaz je sestaven tak aby určil množství litrů mléka a kilogramů chleba, které se dají koupit za průměrné ceny potravin a mezd v 1Q.2006 a 4Q.2018. Podle zobrazených čísel je zjevné, že s postupem času roste množství mléka a chleba, takže lze řičí že průměrné mzdy v ČR rostly rychleji než se zvyšovaly průměrné ceny potravin, což pro obyvatele ČR je pozitivním zjištěním.  
+SQL dotaz je sestaven tak aby určil množství litrů mléka a kilogramů chleba, které se dají koupit za průměrné ceny potravin a mezd v letech 2006 a 2018. Podle zobrazených čísel je zjevné, že s postupem času roste množství mléka a chleba, takže z toho lze odvodit, že průměrné mzdy v ČR rostly rychleji než se zvyšovaly průměrné ceny potravin, což pro obyvatele ČR je pozitivním zjištěním.  
 
 
 
