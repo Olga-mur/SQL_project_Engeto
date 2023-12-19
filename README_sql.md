@@ -100,7 +100,7 @@ Výsledkem SQL dotazu je hodnota -30,3 % u kategorie potravin "Rajská jablka č
 
 ## Otázka č. 4 (Answer 4.sql) - Existuje rok, ve kterém byl meziroční nárůst cen potravin výrazně vyšší než růst mezd (větší než 10 %)?
 
-Prvním krokem k zodpovězení otázky je výpočet meziroční změny v průměrných cenách potravin a mezd v procentech. Druhým krokem by byla kalkulace rozdílů mezi zjištěnými změnami v nárůstu cen a mezd (za stejné porovnatelné období). Největší rozdíl mezi nárůstem cen potravin a nárůstem mezd nabývá hodnoty 12,1 % mezi lety 2011 a 2012.   
+Prvním krokem k zodpovězení otázky je výpočet meziroční změny v průměrných cenách potravin a mezd v procentech. Druhým krokem by byla kalkulace rozdílů mezi zjištěnými změnami v nárůstu cen a mezd (za stejné porovnatelné období). SQL dotaz je sestaven za pomocí Common Table Expressions. Největší rozdíl mezi nárůstem cen potravin a nárůstem mezd nabývá hodnoty 6.7% mezi lety 2012 a 2013. Z toho vyplývá že neexistuje rok, v němž by meziroční narůst cen potravin přesahoval růst mezd o více než 10 %.   
 
 
 
